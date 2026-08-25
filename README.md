@@ -1,8 +1,8 @@
-# 📱 App de Gestão de Tarefas e Atividades
+# App de Gestão de Tarefas e Atividades
 
 Aplicativo mobile desenvolvido em Flutter (Dart) com foco na gestão de tarefas e atividades do dia a dia, permitindo ao usuário organizar, acompanhar e atualizar suas demandas de forma simples e intuitiva.
 
-## 🚀 Funcionalidades
+## Funcionalidades
 - Cadastro de tarefas e atividades
 - Edição e exclusão de tarefas
 - Visualização por lista
@@ -10,13 +10,13 @@ Aplicativo mobile desenvolvido em Flutter (Dart) com foco na gestão de tarefas 
 - Recuperação de senha
 - Interface simples e fácil de usar
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 - Flutter
 - Dart
 - Firebase
 
-## ⏱️ Tempo de Desenvolvimento
+## Tempo de Desenvolvimento
 Aproximadamente 50 horas.
 
-## 📌 Observações
+## Observações
 Projeto desenvolvido para fins acadêmicos e de estudo.
