@@ -2,9 +2,27 @@
 
 Aplicativo Flutter de tarefas com autenticação por e-mail e senha, tarefas salvas por usuário no Cloud Firestore e um calendário ligado às datas de vencimento.
 
-> Sem capturas de tela por enquanto. Em vez de imagens, este README descreve cada tela em texto e mostra a estrutura em diagramas — que é, aliás, o que costuma faltar num README com print e nada mais.
+## Telas
 
-## As telas
+**Lista** — tarefas ordenadas com pendentes primeiro, cada uma com sua data de vencimento.
+
+![Lista de tarefas](docs/screenshots/02-lista.png)
+
+**Calendário** — os dias com tarefa recebem marcador; tocar num dia lista as tarefas que vencem nele.
+
+![Calendário com as tarefas do dia](docs/screenshots/04-calendario.png)
+
+**Editar e concluídas** — tocar numa tarefa abre a edição; concluídas ficam riscadas e podem ser ocultadas.
+
+![Edição de tarefa e tarefas concluídas](docs/screenshots/03-editar-e-concluidas.png)
+
+**Entrar** — login com validação antes de ir à rede, e links para cadastro e recuperação de senha.
+
+![Tela de login](docs/screenshots/01-login.png)
+
+> As capturas são da build web rodando no navegador, em janela de desktop — por isso as áreas vazias nas laterais.
+
+### O que cada tela faz
 
 | Tela | O que mostra |
 |---|---|
