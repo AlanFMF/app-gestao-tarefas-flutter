@@ -41,3 +41,7 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Configuração local do Firebase gerada pelo FlutterFire CLI
+.firebase/
+firebase-debug.log

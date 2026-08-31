@@ -1,0 +1,20 @@
+# Regras de análise estática do projeto.
+#
+# O pubspec já mencionava este arquivo nos comentários, mas ele não existia —
+# ou seja, `flutter analyze` rodava sem o conjunto de lints do Flutter.
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    # Usar BuildContext depois de um await sem checar `mounted` era um dos
+    # problemas da versão anterior. Deixar explícito para não voltar.
+    use_build_context_synchronously: true
+    # Evita o `print` de depuração esquecido no código, que era como os erros
+    # de login eram "tratados".
+    avoid_print: true
+    prefer_final_locals: true
+
+analyzer:
+  errors:
+    # Um TODO não deve derrubar a análise, mas deve aparecer.
+    todo: info

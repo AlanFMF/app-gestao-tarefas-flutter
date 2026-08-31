@@ -1,0 +1,35 @@
+rules_version = '2';
+
+// Regras de segurança do Firestore.
+//
+// As tarefas ficam em usuarios/{uid}/tarefas/{id}. Com o dono no caminho, a
+// autorização é uma comparação entre o uid do documento e o de quem pede —
+// não existe consulta capaz de trazer tarefa de outra pessoa, nem por erro de
+// filtro no cliente. Numa coleção única com campo `uid`, esquecer o `where`
+// vazaria tudo.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /usuarios/{uid} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+
+      match /tarefas/{tarefaId} {
+        allow read, delete: if request.auth != null && request.auth.uid == uid;
+
+        // Na escrita, valida o formato: texto não vazio e limitado, e
+        // `concluida` booleano. O cliente é conveniência, não autoridade.
+        allow create, update: if request.auth != null
+          && request.auth.uid == uid
+          && request.resource.data.texto is string
+          && request.resource.data.texto.size() > 0
+          && request.resource.data.texto.size() <= 500
+          && request.resource.data.concluida is bool;
+      }
+    }
+
+    // Nada mais é acessível.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
